@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Contacts</h1>
+<%= search_form_for @q do |f| %>
+<%= f.search_field :guest_name_or_buisness_cont, class:"form-control", placeholder:"Search"%> 
+<% end %>
+</br>
+<table class="table table-bordered table-hover table-color">
+  <thead'>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Buisness</th>
+    </tr>
+  </thead>
+  <div id="contacts">
+  <% @contacts.each do |contact| %>
+    <%= render contact %>
+    <% end %>
+</div>
+</table>
+
+
+
+
+<%= link_to "New contact", new_contact_path %>
