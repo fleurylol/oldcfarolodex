@@ -79,6 +79,4 @@ test:
 #
 production:
   <<: *default
-  database: rolodex_production
-  username: rolodex
-  password: <%= ENV["ROLODEX_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
