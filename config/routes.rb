@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  
+  authenticate :user, (->(user) { user.admin? }) do
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  end
   devise_scope :user do
   get '/users', to: 'devise/registration#new'
   get '/users/password', to: 'devise/password#new'
