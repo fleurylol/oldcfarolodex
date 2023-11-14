@@ -1,4 +1,10 @@
 class HomeController < ApplicationController
-	def locations
-	end
+  def delivery
+  end
+
+  def businesses
+  end
+
+  def catering
+  end
 end

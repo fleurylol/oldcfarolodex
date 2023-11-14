@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'catering/dispatch'
+  get 'catering/packing'
+  get 'catering/delivery'
+  get 'catering/home'
+
   authenticate :user, (->(user) { user.admin? }) do
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   end
@@ -18,7 +23,6 @@ end
 end
   
 
-  get 'home/locations'
 
   root 'home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
