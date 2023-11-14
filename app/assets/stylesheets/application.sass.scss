@@ -1,3 +1,8 @@
 // Entry point for your Sass build
 @import "contact.scss";@import 'actiontext.scss';@import "trix.scss";
 @import 'actiontext.css';
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Adjust the gap between buttons as needed */
+}

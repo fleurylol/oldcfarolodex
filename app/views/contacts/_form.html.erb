@@ -17,41 +17,42 @@
   
   <div>
     <%= form.label :guest_name, style: "display: block" %>
-    <%= form.text_field :guest_name %>
+    <%= form.text_field :guest_name, class: "form-control form-control-lg" %>
   </div>
 
   <div>
     <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
+    <%= form.text_field :address, class: "form-control form-control-lg" %>
   </div>
 
   <div>
     <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
+    <%= form.text_field :phone, class: "form-control form-control-lg" %>
   </div>
 
   <div>
     <%= form.label :buisness, style: "display: block" %>
-    <%= form.text_field :buisness, class: "form-control" %>
+    <%= form.text_field :buisness, class: "form-control form-control-lg" %>
   </div>
 </br>
   <div>
     <%= form.rich_text_area :notes%>
   </div>
 </br>
-  <div>
+  <div style='margin-bottom: 15px;'>
       <% if contact.images.attached? %>
       <% contact.images.each do |image| %>
       <%= form.hidden_field :images, multiple: true, value: image.signed_id %>
       <%= image_tag(image, height: 100) %>
       <%= link_to "Remove", remove_image_contact_path(image), data: { turbo_method: :delete } %>
-        <br />
     <% end %>
     <% end %>
-    <%= form.file_field :images, multiple: true %>
   </div>
-
   <div>
-    <%= form.submit %>
+   <%= form.file_field :images, multiple: true %>
+ </div>
+</br>
+  <div>
+    <%= form.submit "Update",class: 'btn btn-primary'%>
   </div>
 <% end %>
