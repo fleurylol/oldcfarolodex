@@ -5,8 +5,39 @@
 	margin-bottom: 20px;
 	padding: 20px;
 	position: relative;
+} 
+
+.contact-header{
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: space-between;
+ }
+
+.create-btn{
+  float:right;
 }
 
+@media(max-width:600px){
+  table thead tr{
+    display:none;
+  }
+
+  table tr{
+    display:block;
+  }
+  table th, table td{
+    padding: .5em
+  }
+  table td{
+    text-align:right;
+    display:block;
+    font-size: 1em
+  }
+  table td:before{
+    content:attr(data-title) ": ";
+    float:left;
+  }
+}
 
 .contact-link{
   text-decoration: none;

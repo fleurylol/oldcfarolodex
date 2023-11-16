@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'delivery/home'
+  get 'delivery/maps'
   get 'catering/dispatch'
   get 'catering/packing'
   get 'catering/delivery'
