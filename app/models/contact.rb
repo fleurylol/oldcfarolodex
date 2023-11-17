@@ -5,6 +5,12 @@ class Contact < ApplicationRecord
     belongs_to :user
     before_create :randomize_id
 
+    validates :guest_name, presence: true
+    validates :buisness, presence: true
+    validates :address, presence: true
+    validates :phone, presence: true
+    validates :email, presence: true
+
 	def self.ransackable_attributes(auth_object = nil)
     ["address", "buisness", "created_at", "guest_name", "id", "id_value", "phone", "updated_at"]
   end
