@@ -13,17 +13,17 @@
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control form-control-lg"%>
   </div>
 
   <div>
     <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
+    <%= form.text_field :address, class: "form-control form-control-lg" %>
   </div>
 
 
-
+<br>
   <div>
-    <%= form.submit%>
+    <%= form.submit "Create", class: 'btn btn-primary'%>
   </div>
 <% end %>

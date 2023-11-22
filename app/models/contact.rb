@@ -4,7 +4,6 @@ class Contact < ApplicationRecord
     has_rich_text :notes
     belongs_to :user
     belongs_to :business
-    accepts_nested_attributes_for :business
     before_create :randomize_id
 
     validates :guest_name, presence: true
@@ -12,13 +11,14 @@ class Contact < ApplicationRecord
     validates :phone, presence: true
     validates :email, presence: true
 
-	def self.ransackable_attributes(auth_object = nil)
-    ["address", "business", "created_at", "guest_name", "id", "id_value", "phone", "updated_at"]
-  end
+    def self.ransackable_attributes(auth_object = nil)
+    ["address", "business_id", "created_at", "email", "guest_name", "id", "id_value", "notes", "phone", "updated_at", "user_id"]
+    end
 
-def self.ransackable_associations(auth_object = nil)
-    ["images_attachments", "images_blobs"]
-  end
+     def self.ransackable_associations(auth_object = nil)
+    ["business", "images_attachments", "images_blobs", "rich_text_notes", "user"]
+    end
+
 
   private
 

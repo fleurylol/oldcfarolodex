@@ -4,7 +4,7 @@
 <%= button_to "New contact", new_contact_path, :method => :get, class: "btn btn-secondary create-btn"%>
 </div>
 <%= search_form_for @q do |f| %>
-<%= f.search_field :guest_name_or_business_or_address_cont, class:"form-control", placeholder:"Search"%> 
+<%= f.search_field :guest_name_or_address_cont, class:"form-control", placeholder:"Search"%>
 <% end %>
 </br>
 <div>
@@ -15,7 +15,7 @@
         <th>Address</th>
         <th>Phone</th>
         <th>Email</th>
-        <th>Buisness</th>
+        <th>Business</th>
       </tr>
     </thead>
     <div id="contacts">

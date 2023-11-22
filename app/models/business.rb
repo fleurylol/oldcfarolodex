@@ -3,6 +3,11 @@ class Business < ApplicationRecord
 	has_many :contacts
 
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["address", "created_at", "id", "id_value", "name", "updated_at", "user_id"]
+  end
+
+
 private
 
  def randomize_id

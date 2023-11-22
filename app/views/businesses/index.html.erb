@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
-
+<div class="contact-header">
 <h1>Businesses</h1>
+<%= button_to "New business", new_business_path, :method => :get, class: "btn btn-secondary create-btn"%>
+</div>
 <hr>
 <% @grouped_businesses.each do |letter, businesses| %>
   <h2><%= letter %></h2>
@@ -10,4 +12,4 @@
     <% end %>
   </ul>
 <% end %>
-<%= link_to "New business", new_business_path %>
+
