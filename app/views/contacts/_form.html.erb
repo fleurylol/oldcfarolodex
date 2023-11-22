@@ -1,63 +1,63 @@
 <%= form_with(model: contact) do |form| %>
-  <% if contact.errors.any? %>
-    <div style="color: red">
-      <h2>Fields can't be blank, please put "--" in places you can't fill in.</h2>
-      <ul>
-        <% contact.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
+<% if contact.errors.any? %>
+<div style="color: red">
+  <h2>Fields can't be blank, please put "--" in places you can't fill in.</h2>
+  <ul>
+    <% contact.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div>
+  <%= form.text_field :user_id, type: "hidden", value: current_user.id %>
+</div>
+
+<div>
+  <%= form.label :guest_name, style: "display: block" %>
+  <%= form.text_field :guest_name, class: "form-control form-control-lg" %>
+</div>
+
+<div>
+  <%= form.label :email, style: "display:block" %>
+  <%= form.text_field :email, class: "form-control form-control-lg" %>
+</div>
+
+<div>
+  <%= form.label :address, style: "display: block" %>
+  <%= form.text_field :address, class: "form-control form-control-lg" %>
+</div>
+
+<div>
+  <%= form.label :phone, style: "display: block" %>
+  <%= form.text_field :phone, class: "form-control form-control-lg" %>
+</div>
+
+<div>
+  <%= form.label :business_id %>
+  <br>
+  <%= form.collection_select(:business_id, Business.all, :id, :name, { prompt: "Select an existing business"}, {class: "form-select"}) %>
+</div>
+</br>
+<div>
+  <%= form.rich_text_area :notes%>
+</div>
+</br>
+<div style='margin-bottom: 15px;'>
+  <% if contact.images.attached? %>
+  <% contact.images.each do |image| %>
+  <%= form.hidden_field :images, multiple: true, value: image.signed_id %>
+  <%= image_tag(image, height: 100) %>
+  <%= link_to "Remove", remove_image_contact_path(image), data: { turbo_method: :delete } %>
   <% end %>
-
-  <div>
-    <%= form.text_field :user_id, type: "hidden", value: current_user.id %>
-  </div>
-  
-  <div>
-    <%= form.label :guest_name, style: "display: block" %>
-    <%= form.text_field :guest_name, class: "form-control form-control-lg" %>
-  </div>
-
-  <div>
-    <%= form.label :email, style: "display:block" %>
-    <%= form.text_field :email, class: "form-control form-control-lg" %>
-  </div>
-
-  <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address, class: "form-control form-control-lg" %>
-  </div>
-
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone, class: "form-control form-control-lg" %>
-  </div>
-
-  <div>
-    <%= form.label :business_id %>
-    <br>
-    <%= form.collection_select(:business_id, Business.all, :id, :name, { prompt: "Select an existing business"}, {class: "form-select"}) %>
-  </div>
+  <% end %>
+</div>
+<div>
+ <%= form.file_field :images, multiple: true, class:"form-control"%>
+</div>
 </br>
-  <div>
-    <%= form.rich_text_area :notes%>
-  </div>
-</br>
-  <div style='margin-bottom: 15px;'>
-      <% if contact.images.attached? %>
-      <% contact.images.each do |image| %>
-      <%= form.hidden_field :images, multiple: true, value: image.signed_id %>
-      <%= image_tag(image, height: 100) %>
-      <%= link_to "Remove", remove_image_contact_path(image), data: { turbo_method: :delete } %>
-    <% end %>
-    <% end %>
-  </div>
-  <div>
-   <%= form.file_field :images, multiple: true, class:"form-control"%>
- </div>
-</br>
-  <div>
-    <%= form.submit "Update",class: 'btn btn-primary'%>
-  </div>
+<div>
+  <%= form.submit "Update",class: 'btn btn-primary'%>
+</div>
 <% end %>
