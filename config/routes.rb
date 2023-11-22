@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :businesses
   get 'delivery/home'
   get 'delivery/maps'
   get 'catering/dispatch'

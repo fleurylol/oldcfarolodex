@@ -6,6 +6,7 @@
     "@rails/actiontext": "^7.1.1",
     "rails_admin": "3.1.2",
     "sass": "^1.69.5",
+    "select2": "^4.1.0-rc.0",
     "trix": "^2.0.7"
   }
 }

@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Businesses</h1>
+<hr>
+<% @grouped_businesses.each do |letter, businesses| %>
+  <h2><%= letter %></h2>
+  <ul>
+    <% businesses.each do |business| %>
+      <li><%= link_to business.name, business, class:"contact-link" %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to "New business", new_business_path %>

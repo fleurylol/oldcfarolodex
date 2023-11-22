@@ -35,8 +35,9 @@
   </div>
 
   <div>
-    <%= form.label :buisness, style: "display: block" %>
-    <%= form.text_field :buisness, class: "form-control form-control-lg" %>
+    <%= form.label :business_id %>
+    <br>
+    <%= form.collection_select(:business_id, Business.all, :id, :name, { prompt: "Select an existing business"}, {class: "form-select"}) %>
   </div>
 </br>
   <div>
@@ -53,7 +54,7 @@
     <% end %>
   </div>
   <div>
-   <%= form.file_field :images, multiple: true %>
+   <%= form.file_field :images, multiple: true, class:"form-control"%>
  </div>
 </br>
   <div>

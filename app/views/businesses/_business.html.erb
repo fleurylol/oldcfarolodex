@@ -1,0 +1,17 @@
+<div id="<%= dom_id business %>">
+  <div class='row'>
+    <div class='col-xs-12 col-md-6'>
+      <h2><%= business.name %></h2>
+    </div>
+       <div class='col-xs-12 col-md-6'>
+        <h2><%= business.address %></h2>
+      </div>
+  </div>
+  <ul>
+  <% @contacts.each do |contact| %>
+    <li><%= link_to contact.guest_name, contact, class:"contact-link" %> - <%= contact.email %></li>
+  <% end %>
+</ul>
+  
+
+</div>
