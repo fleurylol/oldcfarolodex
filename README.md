@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+yeaah imma keep it a buck fiddy, i dont really know what im doing
 
-Things you may want to cover:
+well i kinda do 
 
-* Ruby version
+just not really
 
-* System dependencies
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+this is a project i made for work that is a rolodex of sorts for our catering and delivery contacts and businesses.
