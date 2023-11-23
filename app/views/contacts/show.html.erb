@@ -28,4 +28,6 @@
   <%= button_to "Delete", @contact, method: :delete, class: "btn btn-danger", form: { data: { turbo_confirm: 'Are you sure?' }}  %>
 </div>
 <% end %>
+<p> Created by <%= @contact.user.email %> </p>
 <% end %>
+
