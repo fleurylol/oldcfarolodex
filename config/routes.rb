@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :businesses
   get 'delivery/home'
   get 'delivery/maps'
+  get 'delivery/cherryvalemall'
   get 'catering/dispatch'
   get 'catering/packing'
   get 'catering/delivery'
