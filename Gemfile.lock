@@ -328,9 +328,6 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jquery-rails
-  mail
-  net-imap
-  nokogiri
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.1)
