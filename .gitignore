@@ -38,7 +38,3 @@
 !/app/assets/builds/.keep
 
 /node_modules
-
-/app/controllers/email_controller.rb
-/app/views/catering/packing.html.erb
-/app/helpers/email_helper.rb
