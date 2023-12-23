@@ -26,7 +26,9 @@ gem 'rails_admin'
 gem 'sass-rails'
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
-
+gem 'mail'
+gem 'net-imap'
+gem 'nokogiri'
 
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 

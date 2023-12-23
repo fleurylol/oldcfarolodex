@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   get 'delivery/maps'
   get 'delivery/cherryvalemall'
   get 'catering/dispatch'
-  get 'catering/packing'
+
   get 'catering/delivery'
   get 'catering/home'
+
+  get 'catering/packing', to: 'email#retrieve_emails'
 
   authenticate :user, (->(user) { user.admin? }) do
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
