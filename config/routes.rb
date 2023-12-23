@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get 'catering/delivery'
   get 'catering/home'
 
-  get 'catering/packing', to: 'email#retrieve_emails'
 
   authenticate :user, (->(user) { user.admin? }) do
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
